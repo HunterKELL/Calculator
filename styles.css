@@ -1,0 +1,13 @@
+.calc-buttons {
+    display: flex;
+    background-color: aqua;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.calc-buttons > div {
+    background-color: white;
+    font-size: 15px;
+    padding: 20px;
+}
