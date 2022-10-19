@@ -1,13 +1,28 @@
-.calc-buttons {
-    display: flex;
-    background-color: aqua;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+
+/*.calc-container {
+    display: grid;
+    grid-template-columns: auto;
+    background-color: black;
+    padding: 10px;
+}*/
+
+.calc-frame {
+   height: 500px;
+   width: 400px;
+   display: grid;
+   grid-template-columns: auto auto auto;
+   background-color: aqua;
+   padding: 10px;
 }
 
-.calc-buttons > div {
-    background-color: white;
-    font-size: 15px;
-    padding: 20px;
+.display-screen {
+    width: 400px;
+    height: 100px;
+    background-color: green;
+}
+
+.calc-buttons > button {
+  padding: 20px;
+  font-size: 20px;
+  text-align: center; 
 }
