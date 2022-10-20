@@ -12,26 +12,43 @@
 .calc-frame {
    height: 500px;
    width: 400px;
-   background-color: aqua;
+   background-color: silver;
    padding: 10px;
 }
 
 .display-screen {
-    width: 400px;
-    height: 100px;
-    background-color: green;
+    width: 100%;
+    height: 115px;
+    font-size: 4rem;
+    color: black;
+    text-align: right;
+    padding: 15px;
+    background-color: lightgreen;
 }
 
 .calc-buttons {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 5px;
+  padding: 10px;
+  margin-top: 1.5rem;
 }
 
 .calc-button {
   height: 60px;
-  background-color: white;
+  background-color: darkorange;
   font-size: 2rem;
   border: 1px solid black;
-  color: red;
+  color: white;
 }
+
+.plus-btn {
+  color: blue;
+  height: 100%;
+  grid-row: 4 / 6;
+  grid-column: 5 / 4;
+}
+
+/*.root-btn {
+  color: black;
+}*/
