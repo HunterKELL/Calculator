@@ -3,25 +3,44 @@ addNum = (a, b) => {
         return result;
     }
 }
-console.log(addNum(2, 4));
 
 minusNum = (a, b) => {
     if (result = a - b) {
         return result;
     }
 }
-console.log(minusNum(4, 2));
 
 multiplyNum = (a, b) => {
     if (result = a * b) {
         return result;
     }
 }
-console.log(multiplyNum(2, 4));
 
 divideNum = (a, b) => {
     if (result = a / b) {
         return result;
     }
 }
-console.log(divideNum(4, 2));
+
+/*addSum = (b) => {
+    let sum = 0;
+    for (let a = 0; a < b; a++) {
+        sum+=b[a];
+    }
+    return sum;
+}
+console.log(addSum(4))*/
+
+operate = (operator, a, b) => {
+    a = num(a)
+    b = num(b)
+    if (operator === '+') {
+        return addNum(a, b);
+    } else if (operator === '-') {
+        return minusNum(a, b);
+    } else if (operator === '*') {
+        return multiplyNum(a, b);
+    } else if (operator === '/' && b != 0) {
+        return divideNum(a, b);
+    }
+}
