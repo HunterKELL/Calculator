@@ -5,12 +5,13 @@
     background-color: black;
     padding: 10px;
 }*/
+* {
+  box-sizing: border-box;
+}
 
 .calc-frame {
    height: 500px;
    width: 400px;
-   display: grid;
-   grid-template-columns: auto auto auto;
    background-color: aqua;
    padding: 10px;
 }
@@ -21,8 +22,16 @@
     background-color: green;
 }
 
-.calc-buttons > button {
-  padding: 20px;
-  font-size: 20px;
-  text-align: center; 
+.calc-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 5px;
+}
+
+.calc-button {
+  height: 60px;
+  background-color: white;
+  font-size: 2rem;
+  border: 1px solid black;
+  color: red;
 }
