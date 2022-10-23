@@ -1,3 +1,25 @@
+const display = document.querySelector(".display-screen");
+//const numButtons = document.getElementById("number");
+const calcButtons = document.querySelectorAll('.calc-button');
+
+calcButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+        if (btn.innerText) {
+            display.innerText += btn.innerText;
+        } else if (btn.classList.contains('clear-btn')) {
+            
+        }
+    })
+})
+
+/*const clearDisplay = () => {
+    display.innerText = ' ';
+}*/
+
+
+
+
+
 addNum = (a, b) => {
     if (result = a + b) {
         return result;
