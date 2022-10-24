@@ -6,11 +6,40 @@ const operatorBtn = document.querySelectorAll('.operator');
 console.log(numberBtn);
 console.log(operatorBtn);
 
+let num1 = ''
+let num2 = ''
+let operator = ''
+//let dot = false
+const logNumber = (number) => {
+    if (num1.length < 10) {
+        num1 += number;
+        display.textContent = num1
+    }
+}
+
 numberBtn.forEach(number => {
     number.addEventListener('click', (e) => {
-        if(e.target.innerText === '1') {
-            display.innerText += '1'
+        logNumber(e.target.textContent)
+    })
+})
+
+/*numberBtn.forEach(number => {
+    number.addEventListener('click', (e) => {
+        if(e.target.innerText === '.' && !dot ){
+            dot = true;
+        } else if (e.target.innerText === '.' && dot){
+            return
         }
+        num1 += e.target.innerText;
+        display.innerText = num1
+    })
+})*/
+
+
+
+operatorBtn.forEach(operator => {
+    operator.addEventListener('click', (e) => {
+         
     })
 })
 
