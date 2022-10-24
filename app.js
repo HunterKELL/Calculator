@@ -1,16 +1,28 @@
-const display = document.querySelector(".display-screen");
+const display = document.querySelector('.display-screen');
+const numberBtn = document.querySelectorAll('.number');
+const operatorBtn = document.querySelectorAll('.operator');
 //const numButtons = document.getElementById("number");
-const calcButtons = document.querySelectorAll('.calc-button');
+//const calcButtons = document.querySelectorAll('.calc-button');
+console.log(numberBtn);
+console.log(operatorBtn);
 
-calcButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-        if (btn.innerText) {
-            display.innerText += btn.innerText;
-        } else if (btn.classList.contains('clear-btn')) {
-            
+numberBtn.forEach(number => {
+    number.addEventListener('click', (e) => {
+        if(e.target.innerText === '1') {
+            display.innerText += '1'
         }
     })
 })
+
+/*calcButtons.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        if (e.target.innerText) {
+            display.innerText += e.target.innerText;
+        } else if (e.target.id === 'clear-btn') {
+            display.innerText = '';
+        }
+    })
+})*/
 
 /*const clearDisplay = () => {
     display.innerText = ' ';
