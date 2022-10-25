@@ -34,12 +34,16 @@ numberBtn.forEach(number => {
         display.innerText = num1
     })
 })*/
-
-
+const logOperator = (op) => {
+    operator = op
+    display.textContent = num1
+    num1 = ''
+    //display.textContent = ''
+}
 
 operatorBtn.forEach(operator => {
     operator.addEventListener('click', (e) => {
-         
+         logOperator(e.target.textContent);
     })
 })
 
@@ -56,10 +60,6 @@ operatorBtn.forEach(operator => {
 /*const clearDisplay = () => {
     display.innerText = ' ';
 }*/
-
-
-
-
 
 addNum = (a, b) => {
     if (result = a + b) {
