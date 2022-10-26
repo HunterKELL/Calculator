@@ -1,10 +1,15 @@
 const display = document.querySelector('.display-screen');
 const numberBtn = document.querySelectorAll('.number');
 const operatorBtn = document.querySelectorAll('.operator');
+const clear = document.querySelector('.clear-btn');
+const equal = document.querySelector('.equal-btn');
 //const numButtons = document.getElementById("number");
 //const calcButtons = document.querySelectorAll('.calc-button');
 console.log(numberBtn);
 console.log(operatorBtn);
+console.log(clear);
+console.log(equal);
+
 
 let num1 = ''
 let num2 = ''
@@ -16,7 +21,7 @@ const logNumber = (number) => {
         display.textContent = num1
     }
 }
-
+//console.log(logNumber())
 numberBtn.forEach(number => {
     number.addEventListener('click', (e) => {
         logNumber(e.target.textContent)
@@ -36,11 +41,10 @@ numberBtn.forEach(number => {
 })*/
 const logOperator = (op) => {
     operator = op
-    display.textContent = num1
-    num1 = ''
-    //display.textContent = ''
+    num1 = num2
+    display.textContent += num1
 }
-
+console.log(logOperator('/'))
 operatorBtn.forEach(operator => {
     operator.addEventListener('click', (e) => {
          logOperator(e.target.textContent);
@@ -61,30 +65,31 @@ operatorBtn.forEach(operator => {
     display.innerText = ' ';
 }*/
 
-addNum = (a, b) => {
-    if (result = a + b) {
+addNum = (num1, num2) => {
+    return num1 + num2
+}
+
+minusNum = (num1, num2) => {
+    if (result = num1 - num2) {
         return result;
     }
 }
 
-minusNum = (a, b) => {
-    if (result = a - b) {
+multiplyNum = (num1, num2) => {
+    if (result = num1 * num2) {
         return result;
     }
 }
 
-multiplyNum = (a, b) => {
-    if (result = a * b) {
+divideNum = (num1, num2) => {
+    if (result = num1 / num2) {
         return result;
     }
 }
-
-divideNum = (a, b) => {
-    if (result = a / b) {
-        return result;
-    }
-}
-
+console.log(addNum(2, 2));
+console.log(minusNum(4, 2));
+console.log(multiplyNum(3, 2));
+console.log(divideNum(6, 2));
 /*addSum = (b) => {
     let sum = 0;
     for (let a = 0; a < b; a++) {
@@ -94,16 +99,46 @@ divideNum = (a, b) => {
 }
 console.log(addSum(4))*/
 
-operate = (operator, a, b) => {
-    a = num(a)
-    b = num(b)
+calculate = (operator, num1, num2) => {
+    num1 = Number(num1)
+    num2 = Number(num2)
     if (operator === '+') {
-        return addNum(a, b);
+        return addNum(num1, num2);
     } else if (operator === '-') {
-        return minusNum(a, b);
+        return minusNum(num1, num2);
     } else if (operator === '*') {
-        return multiplyNum(a, b);
-    } else if (operator === '/' && b != 0) {
-        return divideNum(a, b);
+        return multiplyNum(num1, num2);
+    } else if (operator === '/' && num2 != 0) {
+        return divideNum(num1, num2);
     }
+    display.textContent = (operator, num1, num2)
+    console.log(operator, num1, num2);
+    
+    //console.log(addNum(num1, num2));
 }
+/*calculate = (num1, operator, num2) => {
+    num1 = Number(num1)
+    num2 = Number(num2)
+    if (operator === '+') {
+        return num1 + num2
+    } else if (operator === '-') {
+        return num1 - num2
+    } else if (operator === '*') {
+        
+    } else if (operator === '/' && b != 0) {
+        
+    } 
+    display.textContent = ''
+    //operator = operator.toString();
+    //console.log(addNum(num1, num2));
+}*/
+equal.addEventListener('click', (calculate))
+console.log(calculate('+', 1, 1));
+console.log(calculate('-', 2, 1));
+console.log(calculate('*', 2, 3));
+console.log(calculate('/', 100, 2));
+
+//console.log(calculate(1, '+', 1));
+/*if (num1 === '' || operator === '' || num2 === '') return;
+    let result = calculate(num1, operator, num2);
+    result = result.toString();*/
