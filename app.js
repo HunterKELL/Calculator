@@ -13,7 +13,7 @@ console.log(equal);
 
 let currentNum = ''
 let previousNum = ''
-//let operator = ''
+let operator = ''
 //let dot = false
 /*const logNumber = (number) => {
     if (num1.length < 10) {
@@ -50,8 +50,11 @@ operatorBtn.forEach(operator => {
         operator += e.target.textContent
         previousNum = currentNum
         currentNum = ''
-        display.textContent = previousNum + '' + operator
-        display.textContent = currentNum
+        if (currentNum){
+            display.textContent = previousNum + ' ' + operator
+            display.textContent = currentNum
+        }
+        
         console.log(display)
     })
 })
@@ -100,6 +103,26 @@ console.log(addNum(2, 2));
 console.log(minusNum(4, 2));
 console.log(multiplyNum(3, 2));
 console.log(divideNum(6, 2));
+
+calculate = () => {
+    previousNum = Number(previousNum)
+    currentNum = Number(currentNum)
+    if (operator === '+') {
+        previousNum += currentNum;
+    } else if (operator === '-') {
+        previousNum -= currentNum;
+    } else if (operator === '*') {
+        previousNum *= currentNum;
+    } else if (operator === '/' && b != 0) {
+        previousNum /= currentNum;
+    }
+    console.log(previousNum)
+    //display.textContent = ''
+    //console.log(addNum(num1, num2));
+}
+equal.addEventListener('click', () => {
+    calculate();
+})
 /*addSum = (b) => {
     let sum = 0;
     for (let a = 0; a < b; a++) {
@@ -109,7 +132,7 @@ console.log(divideNum(6, 2));
 }
 console.log(addSum(4))*/
 
-calculate = (operator, a, b) => {
+/*calculate = (operator, a, b) => {
     if (operator === '+') {
         return addNum(a, b);
     } else if (operator === '-') {
@@ -121,7 +144,7 @@ calculate = (operator, a, b) => {
     }
     //display.textContent = ''
     //console.log(addNum(num1, num2));
-}
+}*/
 /*equal.addEventListener('click', () => {
     if (operator && num1 && num2) {
         calculate()
