@@ -13,7 +13,7 @@ console.log(equal);
 
 let currentNum = ''
 let previousNum = ''
-let operator = ''
+//let operator = ''
 //let dot = false
 /*const logNumber = (number) => {
     if (num1.length < 10) {
@@ -27,7 +27,10 @@ let operator = ''
 //console.log(logNumber())
 numberBtn.forEach(number => {
     number.addEventListener('click', (e) => {
-        console.log(number)
+        //console.log(number)
+        if (currentNum.length < 10)
+        currentNum += e.target.textContent
+        display.textContent = currentNum
     })
 })
 /*numberBtn.forEach(number => {
@@ -43,8 +46,21 @@ numberBtn.forEach(number => {
 })*/
 operatorBtn.forEach(operator => {
     operator.addEventListener('click', (e) => {
-       console.log(operator); 
+        //console.log(operator);
+        operator += e.target.textContent
+        previousNum = currentNum
+        currentNum = ''
+        display.textContent = previousNum + '' + operator
+        display.textContent = currentNum
+        console.log(display)
     })
+})
+
+clear.addEventListener('click', () => {
+    previousNum = ''
+    currentNum = ''
+    operator = ''
+    display.textContent = ''
 })
 /*calcButtons.forEach(btn => {
     btn.addEventListener('click', (e) => {
