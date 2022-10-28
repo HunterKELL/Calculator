@@ -26,6 +26,17 @@
     background-color: lightgreen;
 }
 
+.top-screen {
+  font-size: 1.5rem;
+  color: black;
+  text-align: right;
+}
+
+.bottom-screen {
+  font-size: 3rem;
+  color: black;
+  text-align: right;
+}
 .calc-buttons {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
