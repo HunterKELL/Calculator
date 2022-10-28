@@ -11,11 +11,11 @@ console.log(clear);
 console.log(equal);
 
 
-let num1 = ''
-let num2 = ''
+let currentNum = ''
+let previousNum = ''
 let operator = ''
 //let dot = false
-const logNumber = (number) => {
+/*const logNumber = (number) => {
     if (num1.length < 10) {
         num1 += number;
         display.textContent = num1
@@ -23,14 +23,13 @@ const logNumber = (number) => {
         num2 += number
         display.textContent = num2
     }
-}
+}*/
 //console.log(logNumber())
 numberBtn.forEach(number => {
     number.addEventListener('click', (e) => {
-        logNumber(e.target.textContent)
+        console.log(number)
     })
 })
-
 /*numberBtn.forEach(number => {
     number.addEventListener('click', (e) => {
         if(e.target.innerText === '.' && !dot ){
@@ -42,15 +41,11 @@ numberBtn.forEach(number => {
         display.innerText = num1
     })
 })*/
-const logOperator = (op) => {
-    
-}
 operatorBtn.forEach(operator => {
     operator.addEventListener('click', (e) => {
-         logOperator(e.target.textContent);
+       console.log(operator); 
     })
 })
-
 /*calcButtons.forEach(btn => {
     btn.addEventListener('click', (e) => {
         if (e.target.innerText) {
@@ -64,7 +59,6 @@ operatorBtn.forEach(operator => {
 /*const clearDisplay = () => {
     display.innerText = ' ';
 }*/
-
 addNum = (a, b) => {
     return a + b
 }
@@ -99,17 +93,15 @@ console.log(divideNum(6, 2));
 }
 console.log(addSum(4))*/
 
-calculate = (operator, num1, num2) => {
-    num1 = Number(num1)
-    num2 = Number(num2)
+calculate = (operator, a, b) => {
     if (operator === '+') {
-        return addNum(num1, num2);
+        return addNum(a, b);
     } else if (operator === '-') {
-        return minusNum(num1, num2);
+        return minusNum(a, b);
     } else if (operator === '*') {
-        return multiplyNum(num1, num2);
-    } else if (operator === '/' && num2 != 0) {
-        return divideNum(num1, num2);
+        return multiplyNum(a, b);
+    } else if (operator === '/' && b != 0) {
+        return divideNum(a, b);
     }
     //display.textContent = ''
     //console.log(addNum(num1, num2));
@@ -119,7 +111,7 @@ calculate = (operator, num1, num2) => {
         calculate()
     }
 })*/
-equal.addEventListener('click', (calculate))
+//equal.addEventListener('click', (calculate))
 //console.log(operator, num1, num2);
 /*calculate = (num1, operator, num2) => {
     num1 = Number(num1)
@@ -137,7 +129,7 @@ equal.addEventListener('click', (calculate))
     //operator = operator.toString();
     //console.log(addNum(num1, num2));
 }*/
-console.log(calculate('+', 1, 1));
+/*console.log(calculate('+', 1, 1));
 console.log(calculate('-', 2, 1));
 console.log(calculate('*', 2, 3));
 console.log(calculate('/', 100, 2));
