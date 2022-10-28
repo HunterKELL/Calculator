@@ -19,6 +19,9 @@ const logNumber = (number) => {
     if (num1.length < 10) {
         num1 += number;
         display.textContent = num1
+    } else if (num1 === Number) {
+        num2 += number
+        display.textContent = num2
     }
 }
 //console.log(logNumber())
@@ -40,11 +43,8 @@ numberBtn.forEach(number => {
     })
 })*/
 const logOperator = (op) => {
-    operator = op
-    num1 = num2
-    display.textContent += num1
+    
 }
-console.log(logOperator('/'))
 operatorBtn.forEach(operator => {
     operator.addEventListener('click', (e) => {
          logOperator(e.target.textContent);
@@ -65,24 +65,24 @@ operatorBtn.forEach(operator => {
     display.innerText = ' ';
 }*/
 
-addNum = (num1, num2) => {
-    return num1 + num2
+addNum = (a, b) => {
+    return a + b
 }
 
-minusNum = (num1, num2) => {
-    if (result = num1 - num2) {
+minusNum = (a, b) => {
+    if (result = a - b) {
         return result;
     }
 }
 
-multiplyNum = (num1, num2) => {
-    if (result = num1 * num2) {
+multiplyNum = (a, b) => {
+    if (result = a * b) {
         return result;
     }
 }
 
-divideNum = (num1, num2) => {
-    if (result = num1 / num2) {
+divideNum = (a, b) => {
+    if (result = a / b) {
         return result;
     }
 }
@@ -111,11 +111,16 @@ calculate = (operator, num1, num2) => {
     } else if (operator === '/' && num2 != 0) {
         return divideNum(num1, num2);
     }
-    display.textContent = (operator, num1, num2)
-    console.log(operator, num1, num2);
-    
+    //display.textContent = ''
     //console.log(addNum(num1, num2));
 }
+/*equal.addEventListener('click', () => {
+    if (operator && num1 && num2) {
+        calculate()
+    }
+})*/
+equal.addEventListener('click', (calculate))
+//console.log(operator, num1, num2);
 /*calculate = (num1, operator, num2) => {
     num1 = Number(num1)
     num2 = Number(num2)
@@ -132,12 +137,10 @@ calculate = (operator, num1, num2) => {
     //operator = operator.toString();
     //console.log(addNum(num1, num2));
 }*/
-equal.addEventListener('click', (calculate))
 console.log(calculate('+', 1, 1));
 console.log(calculate('-', 2, 1));
 console.log(calculate('*', 2, 3));
 console.log(calculate('/', 100, 2));
-
 //console.log(calculate(1, '+', 1));
 /*if (num1 === '' || operator === '' || num2 === '') return;
     let result = calculate(num1, operator, num2);
