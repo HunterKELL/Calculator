@@ -1,4 +1,6 @@
 const display = document.querySelector('.display-screen');
+const firstDisplay = document.querySelector('.bottom-screen');
+const secondDisplay = document.querySelector('.top-screen');
 const numberBtn = document.querySelectorAll('.number');
 const operatorBtn = document.querySelectorAll('.operator');
 const clear = document.querySelector('.clear-btn');
@@ -9,6 +11,8 @@ console.log(numberBtn);
 console.log(operatorBtn);
 console.log(clear);
 console.log(equal);
+console.log(firstDisplay);
+console.log(secondDisplay);
 
 
 let currentNum = ''
@@ -30,7 +34,7 @@ numberBtn.forEach(number => {
         //console.log(number)
         if (currentNum.length < 10)
         currentNum += e.target.textContent
-        display.textContent = currentNum
+        firstDisplay.textContent = currentNum
     })
 })
 /*numberBtn.forEach(number => {
