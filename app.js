@@ -31,6 +31,7 @@ let operator = ''
     }
 }*/
 //console.log(logNumber())
+// Event listener for all number buttons. Found it easier to keep the logic of displaying numbers all within instead of within another function.
 numberBtn.forEach(number => {
     number.addEventListener('click', (e) => {
         //console.log(number)
@@ -55,6 +56,7 @@ numberBtn.forEach(number => {
         display.innerText = num1
     })
 })*/
+// Event listener for all operator buttons. Displays numbers with operators to create equations with the help of a another function. I was not able to cram everything within itself and get it functioning properly. Opted to use another function with some help.
 operatorBtn.forEach(operator => {
     operator.addEventListener('click', (e) => {
         //console.log(operator);
