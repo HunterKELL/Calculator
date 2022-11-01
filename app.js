@@ -52,7 +52,9 @@ operatorBtn.forEach(operator => {
     operator.addEventListener('click', (e) => {
         //console.log(operator);
         logOperator(e.target.textContent)
-        
+        secondDisplay.textContent = previousNum + ' ' + e.target.textContent
+        firstDisplay.textContent = currentNum
+
         //operator += e.target.textContent
         //previousNum = currentNum
         //firstDisplay.textContent = currentNum
