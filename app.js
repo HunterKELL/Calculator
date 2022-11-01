@@ -5,6 +5,7 @@ const numberBtn = document.querySelectorAll('.number');
 const operatorBtn = document.querySelectorAll('.operator');
 const clear = document.querySelector('.clear-btn');
 const equal = document.querySelector('.equal-btn');
+const decimal = document.querySelector('.decimal-btn')
 //const numButtons = document.getElementById("number");
 //const calcButtons = document.querySelectorAll('.calc-button');
 console.log(numberBtn);
@@ -13,6 +14,7 @@ console.log(clear);
 console.log(equal);
 console.log(firstDisplay);
 console.log(secondDisplay);
+console.log(decimal)
 
 
 let currentNum = ''
@@ -32,9 +34,14 @@ let operator = ''
 numberBtn.forEach(number => {
     number.addEventListener('click', (e) => {
         //console.log(number)
-        if (currentNum.length < 10)
-        currentNum += e.target.textContent
-        firstDisplay.textContent = currentNum
+        if (currentNum.length < 12){
+            currentNum += e.target.textContent
+            firstDisplay.textContent = currentNum    
+        } else if (!e.target.textContent.includes('.')){
+            currentNum = e.target.textContent
+            currentNum += '.'
+            firstDisplay.textContent = currentNum
+        }   
     })
 })
 /*numberBtn.forEach(number => {
@@ -79,6 +86,12 @@ const logOperator = (oper) => {
 const roundNum = (num) => {
     return Math.round(num * 1000) / 1000
 }
+
+const logPercent = (currentNum, previousNum) => {
+    return (previousNum * 100) / currentNum;
+}
+
+console.log(logPercent(100, 10));
 
 clear.addEventListener('click', () => {
     previousNum = ''
