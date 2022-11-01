@@ -76,6 +76,10 @@ const logOperator = (oper) => {
     firstDisplay.textContent = ''
 }
 
+const roundNum = (num) => {
+    return Math.round(num * 1000) / 1000
+}
+
 clear.addEventListener('click', () => {
     previousNum = ''
     currentNum = ''
@@ -134,12 +138,27 @@ calculate = () => {
     } else if (operator === '/' && previousNum != 0) {
         previousNum /= currentNum;
     }
+    
+    previousNum = roundNum(previousNum)
+    //previousNum = previousNum.toString()
+    //currentNum = previousNum.toString()
+    //secondDisplay.textContent = ''
+    //firstDisplay.textContent = previousNum
+    secondDisplay.textContent = ''
+    firstDisplay.textContent = previousNum
     console.log(previousNum)
     //display.textContent = ''
     //console.log(addNum(num1, num2));
 }
 equal.addEventListener('click', () => {
-    calculate();
+    if(currentNum != '' && previousNum != ''){
+        calculate();
+        secondDisplay.textContent = ''
+        if (previousNum.length < 6){
+            firstDisplay.textContent = previousNum
+        }
+    }
+   
 })
 /*addSum = (b) => {
     let sum = 0;
