@@ -51,23 +51,35 @@ numberBtn.forEach(number => {
 operatorBtn.forEach(operator => {
     operator.addEventListener('click', (e) => {
         //console.log(operator);
-        operator += e.target.textContent
-        previousNum = currentNum
-        currentNum = ''
-        if (currentNum){
-            display.textContent = previousNum + ' ' + operator
-            display.textContent = currentNum
-        }
+        logOperator(e.target.textContent)
         
-        console.log(display)
+        //operator += e.target.textContent
+        //previousNum = currentNum
+        //firstDisplay.textContent = currentNum
+        //currentNum = ''
+        //if (currentNum){
+          //  secondDisplay.textContent = previousNum + ' ' + operator
+           // firstDisplay.textContent = ''
+        //}
+        
+        //console.log(display)
     })
 })
+
+const logOperator = (oper) => {
+    operator = oper
+    previousNum = currentNum
+    secondDisplay.textContent = previousNum
+    currentNum = ''
+    firstDisplay.textContent = ''
+}
 
 clear.addEventListener('click', () => {
     previousNum = ''
     currentNum = ''
     operator = ''
-    display.textContent = ''
+    firstDisplay.textContent = ''
+    secondDisplay.textContent = ''
 })
 /*calcButtons.forEach(btn => {
     btn.addEventListener('click', (e) => {
@@ -115,9 +127,9 @@ calculate = () => {
         previousNum += currentNum;
     } else if (operator === '-') {
         previousNum -= currentNum;
-    } else if (operator === '*') {
+    } else if (operator === 'x') {
         previousNum *= currentNum;
-    } else if (operator === '/' && b != 0) {
+    } else if (operator === '/' && previousNum != 0) {
         previousNum /= currentNum;
     }
     console.log(previousNum)
