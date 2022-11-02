@@ -5,7 +5,8 @@ const numberBtn = document.querySelectorAll('.number');
 const operatorBtn = document.querySelectorAll('.operator');
 const clear = document.querySelector('.clear-btn');
 const equal = document.querySelector('.equal-btn');
-const decimal = document.querySelector('.decimal-btn')
+const decimal = document.querySelector('.decimal-btn');
+const percent = document.querySelector('.percent-btn');
 //const numButtons = document.getElementById("number");
 //const calcButtons = document.querySelectorAll('.calc-button');
 console.log(numberBtn);
@@ -89,11 +90,16 @@ const roundNum = (num) => {
     return Math.round(num * 1000) / 1000
 }
 
-const logPercent = (currentNum, previousNum) => {
+/*const logPercent = (currentNum, previousNum) => {
     return (previousNum * 100) / currentNum;
-}
+    
+}*/
 
-console.log(logPercent(100, 10));
+//percent.addEventListener('click', () => {
+    
+//})
+
+//console.log(logPercent(100, 10));
 
 clear.addEventListener('click', () => {
     previousNum = ''
@@ -152,6 +158,8 @@ calculate = () => {
         previousNum *= currentNum;
     } else if (operator === '/' && previousNum != 0) {
         previousNum /= currentNum;
+    } else if (operator === '%') {
+        previousNum = (parseFloat(previousNum * currentNum) / 100)
     }
     
     previousNum = roundNum(previousNum)
