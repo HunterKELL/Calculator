@@ -5,8 +5,9 @@ const numberBtn = document.querySelectorAll('.number');
 const operatorBtn = document.querySelectorAll('.operator');
 const clear = document.querySelector('.clear-btn');
 const equal = document.querySelector('.equal-btn');
-const decimal = document.querySelector('.decimal-btn');
+//const decimal = document.querySelector('.decimal-btn');
 const percent = document.querySelector('.percent-btn');
+const squareRoot = document.querySelector('.square-root');
 //const numButtons = document.getElementById("number");
 //const calcButtons = document.querySelectorAll('.calc-button');
 console.log(numberBtn);
@@ -15,7 +16,7 @@ console.log(clear);
 console.log(equal);
 console.log(firstDisplay);
 console.log(secondDisplay);
-console.log(decimal)
+//console.log(decimal)
 
 
 let currentNum = ''
@@ -183,6 +184,14 @@ equal.addEventListener('click', () => {
     }
    
 })
+
+const findSqRt = () => {
+    if(!currentNum) return
+    currentNum = Math.sqrt(currentNum);
+    currentNum = roundNum(currentNum)
+    firstDisplay.textContent = currentNum;
+}
+squareRoot.addEventListener('click', findSqRt)
 /*addSum = (b) => {
     let sum = 0;
     for (let a = 0; a < b; a++) {
