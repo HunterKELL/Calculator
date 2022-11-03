@@ -38,14 +38,14 @@ let decimal = ''
 numberBtn.forEach(number => {
     number.addEventListener('click', (e) => {
         //console.log(number)
-        if (currentNum.length < 12){
+        if (currentNum.length < 10){
             currentNum += e.target.textContent
             firstDisplay.textContent = currentNum    
-        } /*else if (!e.target.textContent.includes('.')){
+        } else if (!e.target.textContent.includes('.')){
             currentNum = e.target.textContent
             currentNum += '.'
             firstDisplay.textContent = currentNum
-        }*/   
+        }   
     })
 })
 /*numberBtn.forEach(number => {
@@ -87,7 +87,7 @@ const logOperator = (oper) => {
     currentNum = ''
     firstDisplay.textContent = ''
 }
-decimalBtn.addEventListener('click', (e) => {
+/*decimalBtn.addEventListener('click', (e) => {
     if(!firstDisplay.textContent.includes('.')){
         firstDisplay.textContent += '.'    
     } 
