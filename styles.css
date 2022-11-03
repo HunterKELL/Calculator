@@ -1,6 +1,6 @@
 :root {
   --calc-color: #3C3C3C;
-  --calc-screen-color: #F5F5F5;
+  --calc-screen-color: #C5F6FC;
   --operator-btn-color: #087E8B;
   --number-btn-color: #999999;
   --clear-btn-color: #FF5A5F;
@@ -103,7 +103,7 @@
 }
 
 #equal {
-  background-color: var(--calc-screen-color);
+  background-color: #F5F5F5;
   color: var(--operator-btn-color);
 }
 
