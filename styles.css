@@ -11,6 +11,9 @@
 * {
   box-sizing: border-box;
 }
+.title-container {
+  text-align: center;
+}
 
 .calc-container {
   display: flex;

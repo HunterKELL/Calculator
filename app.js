@@ -41,10 +41,9 @@ numberBtn.forEach(number => {
         if (currentNum.length < 10){
             currentNum += e.target.textContent
             firstDisplay.textContent = currentNum    
-        } else if (!e.target.textContent.includes('.')){
-            currentNum = e.target.textContent
-            currentNum += '.'
-            firstDisplay.textContent = currentNum
+        } else if (!e.target.textContent.includes('.') < 1){
+            e.target.textContent += '.'
+            firstDisplay.textContent = e.target.textContent
         }   
     })
 })
