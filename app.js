@@ -41,11 +41,11 @@ numberBtn.forEach(number => {
         if (currentNum.length < 12){
             currentNum += e.target.textContent
             firstDisplay.textContent = currentNum    
-        } else if (!e.target.textContent.includes('.')){
+        } /*else if (!e.target.textContent.includes('.')){
             currentNum = e.target.textContent
             currentNum += '.'
             firstDisplay.textContent = currentNum
-        }   
+        }*/   
     })
 })
 /*numberBtn.forEach(number => {

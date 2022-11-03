@@ -1,4 +1,3 @@
-
 :root {
   --calc-color: #3C3C3C;
   --calc-screen-color: #F5F5F5;
@@ -6,6 +5,7 @@
   --number-btn-color: #999999;
   --clear-btn-color: #FF5A5F;
 }
+
 * {
   box-sizing: border-box;
 }
@@ -16,21 +16,25 @@
   justify-content: center;
 }
 
+.solar-panel {
+
+}
+
 .calc-frame {
-   height: 500px;
-   width: 400px;
-   background-color: var(--calc-color);
-   padding: 10px;
+  height: 500px;
+  width: 400px;
+  background-color: var(--calc-color);
+  padding: 10px;
 }
 /* Displays */
 .display-screen {
-    width: 100%;
-    height: 115px;
-    font-size: 4rem;
-    color: black;
-    text-align: right;
-    padding: 15px;
-    background-color: var(--calc-screen-color);
+  width: 100%;
+  height: 115px;
+  font-size: 4rem;
+  color: black;
+  text-align: right;
+  padding: 15px;
+  background-color: var(--calc-screen-color);
 }
 
 .top-screen {
@@ -58,11 +62,29 @@
   background-color: var(--number-btn-color);
   font-size: 2rem;
   border: 1px solid black;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);;
   color: black;
+}
+
+.calc-button:hover {
+  background-color: #3C3C3C;
+  color: var(--number-btn-color)
+}
+
+.calc-button:active {
+  background-color: var(--calc-color);
+  box-shadow: 0 2px var(--calc-color);
+  transform: translateY(2px);
 }
 
 .clear-btn {
   background-color: var(--clear-btn-color);
+}
+
+.clear-btn:hover {
+  background-color: #3C3C3C;
+  color: #FF5A5F;
 }
 
 .plus-btn {
@@ -71,8 +93,23 @@
   grid-column: 5 / 4;
 }
 
-#operator, #equal, #percent, #square-root {
+#operator, #percent, #square-root {
   background-color: var(--operator-btn-color);
+}
+
+#operator:hover, #percent:hover, #square-root:hover {
+  background-color: #3C3C3C;
+  color: #087E8B;
+}
+
+#equal {
+  background-color: var(--calc-screen-color);
+  color: var(--operator-btn-color);
+}
+
+#equal:hover {
+  background-color: #087E8B;
+  color: #F5F5F5;
 }
 
 /*.root-btn {
