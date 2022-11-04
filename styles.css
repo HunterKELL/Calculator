@@ -125,7 +125,18 @@ body {
   background-color: #087E8B;
   color: #F5F5F5;
 }
+/* Creation Credit */
+.creator {
+  text-align: center;
+  margin-top: 3.5rem;
+  font-family: var(--display-font);
+  font-size: 18px;
+}
 
+a {
+  text-decoration: none;
+  color: #C5F6FC;
+}
 /*.root-btn {
   color: black;
 }*/
