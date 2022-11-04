@@ -41,10 +41,13 @@ numberBtn.forEach(number => {
         if (currentNum.length < 10){
             currentNum += e.target.textContent
             firstDisplay.textContent = currentNum    
-        } else if (!e.target.textContent.includes('.') < 1){
+        } /*else if (!firstDisplay.textContent.includes('.') <){
             e.target.textContent += '.'
             firstDisplay.textContent = e.target.textContent
-        }   
+        } /*else if (!e.target.textContent.includes('.') < 1){
+            e.target.textContent += '.'
+            firstDisplay.textContent = e.target.textContent
+        }*/   
     })
 })
 /*numberBtn.forEach(number => {
@@ -86,19 +89,18 @@ const logOperator = (oper) => {
     currentNum = ''
     firstDisplay.textContent = ''
 }
-/*decimalBtn.addEventListener('click', (e) => {
-    if(!firstDisplay.textContent.includes('.')){
-        firstDisplay.textContent += '.'    
-    } 
-})
-/*const logDecimal = (dot) => {
-    decimal = dot
-    if(firstDisplay.textContent.includes(Number)){
-        if(decimal.length <= 1){
-            firstDisplay.textContent += decimal
-        }
+
+const logDecimal = (dot) => {
+    console.log(dot)
+    if (!firstDisplay.textContent.indexOf(dot)){
+        firstDisplay.textContent = 0 + dot
     }
-}*/ 
+}
+decimalBtn.addEventListener('click', (e) => {
+    //console.log(e.target.textContent)
+    logDecimal(e.target.textContent)
+})
+
 const roundNum = (num) => {
     return Math.round(num * 1000) / 1000
 }
