@@ -1,3 +1,4 @@
+/* Global Variables */
 :root {
   --calc-color: #3C3C3C;
   --calc-screen-color: #C5F6FC;
@@ -11,8 +12,17 @@
 * {
   box-sizing: border-box;
 }
+
+body {
+  background-color: #7D869C;
+}
+
 .title-container {
   text-align: center;
+  font-size: 35px;
+  font-family: var(--display-font);
+  color: #C5F6FC;
+  margin-bottom: 8rem;
 }
 
 .calc-container {
@@ -21,15 +31,13 @@
   justify-content: center;
 }
 
-/*.solar-panel {
-
-}*/
-
 .calc-frame {
   height: 500px;
   width: 400px;
   background-color: var(--calc-color);
-  padding: 10px;
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);;
 }
 /* Displays */
 .display-screen {
@@ -69,7 +77,7 @@
   font-size: 2rem;
   border: 1px solid black;
   border-radius: 8px;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
   color: black;
 }
 
