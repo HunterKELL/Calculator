@@ -30,85 +30,58 @@ numberBtn.forEach(number => {
     number.addEventListener('click', (e) => {
         //console.log(number)
         if (currentNum.length < 10){
-            currentNum += e.target.textContent
-            firstDisplay.textContent = currentNum    
+            currentNum += e.target.textContent;
+            firstDisplay.textContent = currentNum;  
         } 
     })
-})
+});
 
 // Event listener for all operator buttons. Displays numbers with operators to create equations with the help of a another function. I was not able to cram everything within itself and get it functioning properly. Opted to use another function with some help.
 operatorBtn.forEach(operator => {
     operator.addEventListener('click', (e) => {
         //console.log(operator);
-        logOperator(e.target.textContent)
-        secondDisplay.textContent = previousNum + ' ' + e.target.textContent
-        firstDisplay.textContent = currentNum
+        logOperator(e.target.textContent);
+        secondDisplay.textContent = previousNum + ' ' + e.target.textContent;
+        firstDisplay.textContent = currentNum;
     })
-})
-
+});
 const logOperator = (oper) => {
-    operator = oper
-    previousNum = currentNum
-    secondDisplay.textContent = previousNum
-    currentNum = ''
-    firstDisplay.textContent = ''
-}
+    operator = oper;
+    previousNum = currentNum;
+    secondDisplay.textContent = previousNum;
+    currentNum = '';
+    firstDisplay.textContent = '';
+};
 
 const logDecimal = (dot) => {
     console.log(dot)
     if (!firstDisplay.textContent.indexOf(dot)){
-        firstDisplay.textContent = 0 + dot
+        firstDisplay.textContent = 0 + dot;
     } else if (dot.length < 1){
-        firstDisplay.textContent = dot
+        firstDisplay.textContent = dot;
     }
-}
+};
 decimalBtn.addEventListener('click', (e) => {
     //console.log(e.target.textContent)
-    logDecimal(e.target.textContent)
+    logDecimal(e.target.textContent);
 
-})
+});
 
 const roundNum = (num) => {
-    return Math.round(num * 1000) / 1000
-}
+    return Math.round(num * 1000) / 1000;
+};
 
 clear.addEventListener('click', () => {
-    previousNum = ''
-    currentNum = ''
-    operator = ''
-    firstDisplay.textContent = ''
-    secondDisplay.textContent = ''
-})
-
-addNum = (a, b) => {
-    return a + b
-}
-
-minusNum = (a, b) => {
-    if (result = a - b) {
-        return result;
-    }
-}
-
-multiplyNum = (a, b) => {
-    if (result = a * b) {
-        return result;
-    }
-}
-
-divideNum = (a, b) => {
-    if (result = a / b) {
-        return result;
-    }
-}
-console.log(addNum(2, 2));
-console.log(minusNum(4, 2));
-console.log(multiplyNum(3, 2));
-console.log(divideNum(6, 2));
+    previousNum = '';
+    currentNum = '';
+    operator = '';
+    firstDisplay.textContent = '';
+    secondDisplay.textContent = '';
+});
 
 calculate = () => {
-    previousNum = Number(previousNum)
-    currentNum = Number(currentNum)
+    previousNum = Number(previousNum);
+    currentNum = Number(currentNum);
     if (operator === '+') {
         previousNum += currentNum;
     } else if (operator === '-') {
@@ -118,26 +91,21 @@ calculate = () => {
     } else if (operator === '/' && previousNum != 0) {
         previousNum /= currentNum;
     } else if (operator === '%') {
-        previousNum = (parseFloat(previousNum * currentNum) / 100)
+        previousNum = (parseFloat(previousNum * currentNum) / 100);
     }
     
-    previousNum = roundNum(previousNum)
-    //previousNum = previousNum.toString()
-    //currentNum = previousNum.toString()
-    //secondDisplay.textContent = ''
-    //firstDisplay.textContent = previousNum
-    secondDisplay.textContent = ''
-    firstDisplay.textContent = previousNum
-    console.log(previousNum)
-    //display.textContent = ''
-    //console.log(addNum(num1, num2));
-}
+    previousNum = roundNum(previousNum);
+    secondDisplay.textContent = '';
+    firstDisplay.textContent = previousNum;
+    console.log(previousNum);
+};
+
 equal.addEventListener('click', () => {
     if(currentNum != '' && previousNum != ''){
         calculate();
-        secondDisplay.textContent = ''
+        secondDisplay.textContent = '';
         if (previousNum.length < 6){
-            firstDisplay.textContent = previousNum
+            firstDisplay.textContent = previousNum;
         }
     }
    
@@ -146,7 +114,7 @@ equal.addEventListener('click', () => {
 const findSqRt = () => {
     if(!currentNum) return
     currentNum = Math.sqrt(currentNum);
-    currentNum = roundNum(currentNum)
+    currentNum = roundNum(currentNum);
     firstDisplay.textContent = currentNum;
 }
-squareRoot.addEventListener('click', findSqRt)
+squareRoot.addEventListener('click', findSqRt);
